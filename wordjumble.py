@@ -123,6 +123,13 @@ def solve_final_jumble(letters, final_circles):
                         for i in range(len(remaining_letters))
                         if i not in letter_indices)
 
+                    find_phrases_recursive(
+                        new_remaining,
+                        remaining_sizes[1:],
+                        current_phrase + (word,)
+                    )
+    find_phrases_recursive(letters, group_sizes, ())
+
     return valid_phrases
 
 
