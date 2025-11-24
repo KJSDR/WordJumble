@@ -22,7 +22,7 @@
 
 
 # HINT: You may want to use itertools.combinations to solve the final jumble
-# import itertools
+import itertools
 
 
 def get_file_lines(filename='/usr/share/dict/words'):
@@ -56,7 +56,10 @@ def solve_one_jumble(letters):
     valid_words = []
 
     # TODO: Unscramble the given letters into all valid words (or at least one)
-    # ========> YOUR CODE HERE <========
+    key = sorted_letters(letters.upper())
+
+    if key in words_dict:
+        valid_words = words_dict[key]
 
     return valid_words
 
