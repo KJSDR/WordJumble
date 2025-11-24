@@ -241,7 +241,14 @@ if __name__ == '__main__':
     # HINT: You may want to store the words list in a different data structure
     # that could help you look up candidate words faster than searching a list
     # ========> YOUR CODE HERE <========
+    words_dict = {}
 
+    for word in words_list:
+        key = sorted_letters(word)
+
+        if key not in words_dict
+            words_dict[key] = []
+        words_dict[key].append(word)
     # Test solving several word jumble example inputs
     # You can comment out these lines to test fewer example inputs at a time
     test_solve_word_jumble_1()
