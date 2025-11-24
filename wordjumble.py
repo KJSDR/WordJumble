@@ -110,10 +110,10 @@ def solve_final_jumble(letters, final_circles):
                 valid_phrases.append(current_phrase)
             return
 
-        next_size = reimaing_sizes[0]
+        next_size = remaining_sizes[0]
 
-        for letter_indices in intertools.combinations(range(len(remaining_letters)), next_size):
-            word_letters = ''.join(remaining_letters[i] for i in letters_indices)
+        for letter_indices in itertools.combinations(range(len(remaining_letters)), next_size):
+            word_letters = ''.join(remaining_letters[i] for i in letter_indices)
 
             possible_words = solve_one_jumble(word_letters)
 
