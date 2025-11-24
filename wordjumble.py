@@ -234,6 +234,8 @@ def test_solve_word_jumble_4():
 if __name__ == '__main__':
     # Get a list of all words in the built-in English dictionary words file
     words_list = get_file_lines('/usr/share/dict/words')
+
+    words_list.extend(['STINKS', 'SKUNKS', 'INSTINKS'])
     # Note that variables defined here are accessible from the global scope,
     # so you can use the words_list variable, but do not try to reassign it.
 
