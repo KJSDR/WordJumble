@@ -112,6 +112,17 @@ def solve_final_jumble(letters, final_circles):
 
         next_size = reimaing_sizes[0]
 
+        for letter_indices in intertools.combinations(range(len(remaining_letters)), next_size):
+            word_letters = ''.join(remaining_letters[i] for i in letters_indices)
+
+            possible_words = solve_one_jumble(word_letters)
+
+            if possible_words:
+                for word in possible_words:
+                    new_remaining = ''.join(remaining_letters[i]
+                        for i in range(len(remaining_letters))
+                        if i not in letter_indices)
+
     return valid_phrases
 
 
