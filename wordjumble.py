@@ -246,7 +246,7 @@ if __name__ == '__main__':
     for word in words_list:
         key = sorted_letters(word)
 
-        if key not in words_dict
+        if key not in words_dict:
             words_dict[key] = []
         words_dict[key].append(word)
     # Test solving several word jumble example inputs
