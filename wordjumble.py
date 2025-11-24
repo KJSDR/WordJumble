@@ -104,6 +104,13 @@ def solve_final_jumble(letters, final_circles):
 
     # TODO: Unscramble the given letters into all valid phrases
     # ========> YOUR CODE HERE <========
+    def find_phrases_recursive(remaining_letters, remaining_sizes, current_phrase):
+        if len(remaining_sizes) == 0:
+            if len(remaining_letters) == 0:
+                valid_phrases.append(current_phrase)
+            return
+
+        next_size = reimaing_sizes[0]
 
     return valid_phrases
 
