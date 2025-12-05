@@ -130,7 +130,8 @@ def solve_final_jumble(letters, final_circles):
                     )
     find_phrases_recursive(letters, group_sizes, ())
 
-    return valid_phrases
+    # Remove duplicates by converting to set, then back to list
+    return list(set(valid_phrases))
 
 
 def solve_word_jumble(letters, circles, final):
@@ -235,6 +236,10 @@ if __name__ == '__main__':
     # Get a list of all words in the built-in English dictionary words file
     words_list = get_file_lines('/usr/share/dict/words')
 
+    # Filter out invalid/uncommon 2-letter words that shouldn't be in jumbles
+    invalid_words = {'NI', 'ZA', 'QI', 'XI', 'XU', 'KA', 'KI'}  # Add more as needed
+    words_list = [word for word in words_list if word not in invalid_words]
+
     words_list.extend(['STINKS', 'SKUNKS', 'INSTINKS'])
     # Note that variables defined here are accessible from the global scope,
     # so you can use the words_list variable, but do not try to reassign it.
@@ -257,4 +262,3 @@ if __name__ == '__main__':
     test_solve_word_jumble_2()
     test_solve_word_jumble_3()
     test_solve_word_jumble_4()
-    
